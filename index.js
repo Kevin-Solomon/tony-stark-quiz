@@ -9,7 +9,7 @@ var questionArray = [
     answer:"Captain Rhodes"
   }
   ,{
-    question:"What was his"+ chalk.blue("first suit called")+ "?? ",
+    question:"What was his "+ chalk.blue("first suit called ")+ "?? ",
     answer:"Mark 1"
   },
   {
@@ -17,7 +17,7 @@ var questionArray = [
     answer:"Pepper Potts"
   },
   {
-    question:"Which team did " +chalk.underline.bgRed("Tony")+ "join in 2012? ",
+    question:"Which team did " +chalk.underline.bgRed("Tony")+ " join in 2012? ",
     answer:"Avengers"
   },
   {
@@ -51,7 +51,17 @@ function askQuestion(question,answer)
   }
   console.log("Your score is: ",score)
 }
-
+function checkHighScore(highScore,userScore){
+  for(var i=0;i<highScore.length;i++){
+    var currentScore = highScore[i];
+    if(userScore>highScore[i].score)
+    {
+      return "Congrats YouHave the Highest Score"
+    }
+    return "Better Luck Next Time"
+  }
+  
+}
 for(var i=0;i<questionArray.length;i++){
   var currentQuestion = questionArray[i];
   askQuestion(currentQuestion.question,currentQuestion.answer);
@@ -62,3 +72,4 @@ for(var i=0;i<highScore.length;i++){
   var currentScore = highScore[i];
   console.log("High Score: ",currentScore.score, " By ",currentScore.name  )
 }
+checkHighScore(highScore,score)
