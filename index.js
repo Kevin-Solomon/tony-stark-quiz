@@ -1,6 +1,7 @@
 var readlineSync = require('readline-sync');
 var chalk = require('chalk');
-var userName = readlineSync.question("Hi May i know your Name: ");
+if (readlineSync.keyInYN('Do you want to play this game? (Y/N) ')) {
+  var userName = readlineSync.question("Hi May i know your Name: ");
 console.log(`Welcome ${userName} How well DO YOU KNOW Tony Stark!!`);
 
 var questionArray = [
@@ -61,4 +62,10 @@ console.log("Congratulations you scored: ",score)
 for(var i=0;i<highScore.length;i++){
   var currentScore = highScore[i];
   console.log("High Score: ",currentScore.score, " By ",currentScore.name  )
+}
+
+
+
+} else {
+  console.log("Have A Nice Day")
 }
