@@ -1,6 +1,6 @@
 var readlineSync = require('readline-sync');
 var chalk = require('chalk');
-if (readlineSync.keyInYN('Do you want to play this game? (Y/N) ')) {
+if (readlineSync.keyInYN('Do you want to play this game?')) {
   var userName = readlineSync.question("Hi May i know your Name: ");
 console.log(`Welcome ${userName} How well DO YOU KNOW Tony Stark!!`);
 
