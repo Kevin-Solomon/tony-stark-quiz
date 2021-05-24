@@ -21,8 +21,12 @@ var questionArray = [
     answer:"Avengers"
   },
   {
-    question:"Did Tony sign the Sokovia Accords?? ",
+    question:"Did Tony sign the Sokovia Accords?? (Yes/No)",
     answer:"Yes"
+  },
+  {
+    question:"What is his password (Hint : Its the name of Virtual assistant",
+    answer:"Jarvis"
   }
 ]
 var score=0;
@@ -39,7 +43,7 @@ var highScore = [
 
 function askQuestion(question,answer)
 {
-  var userAnswer = readlineSync.question(question)
+  var userAnswer = readlineSync.question(question,{hideEchoBack:true})
   if(userAnswer === answer){
     score++;
   }else{
